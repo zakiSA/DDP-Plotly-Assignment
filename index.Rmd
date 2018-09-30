@@ -1,0 +1,21 @@
+---
+title: "Plotly R Markdown Assignment"
+author: "S Zaki"
+date: "9/30/2018"
+always_allow_html: yes
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Daiamonds prices based on Carat and Clarity
+
+```{r plot,echo=FALSE,message=FALSE}
+
+library(plotly)
+library(ggplot2)
+data("diamonds")
+plot_ly(diamonds, x =~carat, y =~price, type = "scatter", mode="markers",color = ~clarity)
+```
