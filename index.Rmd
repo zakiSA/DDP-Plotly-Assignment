@@ -12,12 +12,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Ozone vs Solar radiation colored based on month
 
-```{r plot,echo=FALSE,message=FALSE}
+```{r plot,echo=FALSE,message=FALSE,fig.height=4,fig.width=6}
 
 library(plotly)
 library(ggplot2)
 data("airquality")
-library(plotly)
-plot_ly(airquality, x =~Ozone, y =~Solar.R, type = "scatter", mode="markers",color = ~Month)
+plot_ly(airquality,x =~Ozone, y =~Solar.R, type = "scatter", mode="markers",color = ~Month)
 
 ```
