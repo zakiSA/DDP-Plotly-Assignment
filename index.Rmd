@@ -10,13 +10,14 @@ output: ioslides_presentation
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Ozone vs Solar radiation colored based on month
+## Plot of Tree Height vs Volume colored based on Girth
 
 ```{r plot,echo=FALSE,message=FALSE,fig.height=4,fig.width=6}
 
 library(plotly)
 library(ggplot2)
-data("airquality")
-plot_ly(airquality,x =~Ozone, y =~Solar.R, type = "scatter", mode="markers",color = ~Month)
+library(datasets)
+data("trees")
+plot_ly(trees,x=~Height,y=~Volume,type = "scatter",mode="markers",color = ~Girth)
 
 ```
